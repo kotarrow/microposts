@@ -4,8 +4,8 @@ class ApplicationController < ActionController::Base
 
   private
   def logged_in_user
-    unless logged_in?
-      store_location
+    unless logged_in? #ユーザーがログインしているとtrueを返す
+      store_location  #元いたURLを保持
       flash[:danger] = "Please log in."
       redirect_to login_url
     end
