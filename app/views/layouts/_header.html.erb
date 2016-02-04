@@ -6,6 +6,7 @@
         <li><%= link_to "Home", root_path %></li>
         <li><%= link_to "Help", '#' %></li>
         
+        <%# ログインしているときのみ適用 %>
         <% if logged_in? %>
           <li><%= link_to "Users", '#' %></li>
           <li class="dropdown">
@@ -13,7 +14,9 @@
               Account <b class="caret"></b>
             </a>
             <ul class="dropdown-menu">
-              <li><%= link_to "Profile", current_user %></li>
+              <%#= binding.pry %>
+              <!-- <li><%#= link_to "Profile", edit_user_path(user), method: "get" %></li> -->
+              <li><%= link_to "Profile", '#' %></li>
               <li><%= link_to "Settings", '#' %></li>
               <li class="divider"></li>
               <li>

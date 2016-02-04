@@ -1,3 +1,4 @@
+<%# 個別ユーザ表示画面 %>
 <h1>
   <%= gravatar_for @user %>
   <%= @user.name %>
@@ -5,10 +6,24 @@
   <%# @userはid,name,email,password_digest,created_at,updated_at %>
 </h1>
 
-<div class="row">
-  <div class="col-md-6 col-md-offset-3">
-    <%= form_for(@user) do |f| %>
-    <%= f.submit "profile edit", class: "btn btn-large btn-primary" %>
-    <% end %>
+<%# ここから追加 %>
+<div class="container" style="font-size:medium">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      
+      Location:<br>
+      <div class="panel panel-default">
+      <div class="panel-body">
+        <%= @user.location %>
+      </div>
+      </div>
+      Profile:<br>
+      <div class="panel panel-default">
+      <div class="panel-body">
+        <%= @user.profile %>
+      </div>
+      </div>
+  
+      <%= link_to "profile edit", edit_user_path(@user.id), class: "btn btn-large btn-primary" %>
+    </div>
   </div>
-</div>

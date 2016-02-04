@@ -1,0 +1,22 @@
+<%# プロフィール編集画面 %>
+<h1>profile edit</h1>
+
+<div style="font-size:medium">
+  <%= form_for(@user) do |f| %>
+    Name：
+    <%= f.text_field :name %>
+    Email：
+    <%= f.text_field :email %>
+    <%# Password %>
+    <%#= f.password_field :password %>
+    <%# Confirmation %>
+    <%#= f.password_field :password_confirmation %>
+  
+    location：
+    <%= f.text_field :location %>
+    profile：
+    <%= f.text_area :profile %>
+    
+    <%= f.submit "update" %>
+  <% end %>
+</div>
