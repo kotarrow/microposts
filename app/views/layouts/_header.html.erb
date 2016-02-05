@@ -14,10 +14,8 @@
               Account <b class="caret"></b>
             </a>
             <ul class="dropdown-menu">
-              <%#= binding.pry %>
-              <!-- <li><%#= link_to "Profile", edit_user_path(user), method: "get" %></li> -->
               <li><%= link_to "Profile", '#' %></li>
-              <li><%= link_to "Settings", '#' %></li>
+              <li><%= link_to "Settings", edit_user_path(current_user) %></li>
               <li class="divider"></li>
               <li>
                 <%= link_to "Log out", logout_path, method: "delete" %>
