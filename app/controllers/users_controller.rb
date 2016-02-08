@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:edit, :update]
+  before_action :set_user, only: [:edit, :update, :followings, :followers]
   
   def show
     @user = User.find(params[:id])
@@ -42,13 +42,22 @@ class UsersController < ApplicationController
         #user_path、URLは/users/:id
       else
         render 'edit'
-        #redirect_to edit_user_path(current_user) and return
       end
     else
       redirect_to edit_user_path(current_user) and return
     end
   end
-
+  
+  #追加
+  def followings
+    
+  end
+  
+  #追加
+  def followers
+    
+  end
+  
   private
 
   def user_params

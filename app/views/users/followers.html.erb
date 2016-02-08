@@ -1,0 +1,9 @@
+<div class="row">
+
+<% @user.follower_users.each do |i| %>
+<div class="col-md-4" style="font-size: large">
+  <%= gravatar_for i %>
+  <%= link_to i.name, user_path(i.id) %>
+  <br><br>
+</div>
+<% end %>

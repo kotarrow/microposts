@@ -7,12 +7,25 @@
         <%= @user.name %>
       </h1>
     </section>
+    
+    <table class="table" style="font-size: medium">
+      <%#= binding.pry %>
+      <tr>
+        <th>follow</th>
+        <th>follower</th>
+      </tr>
+      <tr>
+        <td><%= link_to @user.following_users.count, followings_user_path %></td>
+        <td><%= link_to @user.follower_users.count, followers_user_path %></td>
+      </tr>
+    </table>
+    
   </aside>
+  
   <div class="col-md-8">
-    <%#= binding.pry%>
     <%= render 'follow_form' if logged_in? %>
     
-    <% if @user.microposts.any? %>
+    <% if @user.microposts.any? %>　<!-- @user.micropostsに投稿があればtrueを返すﾒｿｯﾄﾞ-->
       <h3>Microposts (<%= @user.microposts.count %>)</h3>
       <ol class="microposts">
         <%= render @microposts %>
